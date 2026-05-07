@@ -62,5 +62,50 @@ separation of concern - take some code out of business logic
    → Focus on core logic, not boilerplate
 ```
 
+
+# Abstract Factory Pattern
+
+## Core Idea
+
+Each factory creates a set of related style/theme objects.
+
+But all factories still create the same product categories.
+
+---
+
+# Example
+
+| Factory | Products Created |
+|---|---|
+| WindowsFactory | WindowsButton, WindowsCheckbox |
+| MacFactory | MacButton, MacCheckbox |
+
+---
+
+# Important Observation
+
+Both factories produce:
+
+- Button
+- Checkbox
+
+But in different families/styles.
+
+---
+
+# Visual Understanding
+
+```txt
+                Abstract Factory
+                       |
+        --------------------------------
+        |                              |
+  WindowsFactory                 MacFactory
+        |                              |
+   ------------                  ------------
+   |          |                  |          |
+WindowsButton WindowsCheckbox  MacButton MacCheckbox
+
+
 ## My Notes
 <!-- Add your own observations, mistakes, and learnings below -->
