@@ -1,40 +1,44 @@
 # Two Pointer
 
-## When to Use
-- Sorted array problems
-- Finding pairs/triplets with a target sum
-- Removing duplicates in-place
-- Partitioning (Dutch National Flag)
+## Technique
+- Start from both ends in sorted array or axis parallel strings/array
+- Sorted array problems, Palindrome, Reverse, Axis Parallel, 2 Pointer(winner)
+- Hashmap, Math formulas being used to count with certain property like sorteds
 - Clue words: "pair", "sorted", "in-place", "two sum", "three sum"
+
 
 ## Template
 
 ### Opposite Direction (sorted array)
-```java
-int left = 0, right = nums.length - 1;
-while (left < right) {
-    int sum = nums[left] + nums[right];
-    if (sum == target) {
-        // found
-        left++; right--;
-    } else if (sum < target) {
-        left++;
-    } else {
-        right--;
-    }
-}
-```
+```python
+class Solution:
+    def threeSum(self, nums: list[int]) -> list[list[int]]:
+        res = []
+        n = len(nums)
+        nums.sort() #sort to get the sum property
+        for i in range(n):
+            if i > 0 and nums[i-1] == nums[i]:
+                continue
+            l, r = i+1, n-1
+            while l < r:
+                t = nums[i]+nums[l]+nums[r]
+                if t == 0:
+                    res.append([nums[i],nums[l],nums[r]])
+                    #l += 1
+                    while l < r and nums[l] == nums[l+1]:
+                        l += 1 #lands at non dup
+                    l += 1
+                    #r -= 1
+                    while l < r and nums[r] == nums[r-1]:
+                        r -= 1 #lands at non dup
+                    r -= 1
+                elif t > 0:
+                    r -= 1 #remove the larger value, need less value
+                else:
+                    l += 1 # remove the smaller, need more value
+        return res
 
-### Same Direction (fast & slow)
-```java
-int slow = 0;
-for (int fast = 0; fast < nums.length; fast++) {
-    if (/* condition */) {
-        nums[slow] = nums[fast];
-        slow++;
-    }
-}
-// slow = new length
+        
 ```
 
 ## Complexity
@@ -59,4 +63,6 @@ for (int fast = 0; fast < nums.length; fast++) {
 
 ## My Notes
 <!-- Add your own observations, mistakes, and learnings below -->
-
+- `count += right - left` → if `nums[L]+nums[R] < target`, all pairs (L, L+1..R) are valid since array is sorted
+- Example: L=0, R=5 → pairs (0,1),(0,2),(0,3),(0,4),(0,5) = 5 pairs
+- After counting all pairs for L, do `L += 1`

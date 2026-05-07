@@ -1,43 +1,71 @@
 # Intervals
 
-## When to Use
-- Merging overlapping intervals
-- Inserting into intervals
-- Meeting room problems
+## Technique
+- Sorting , Min Heap, Hashmap(line sweep), 2 Pointer(winner)
 - Clue words: "interval", "overlap", "merge", "schedule", "meeting"
 
 ## Template
 
 ### Merge Intervals
-```java
-Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
-List<int[]> merged = new ArrayList<>();
-for (int[] interval : intervals) {
-    if (merged.isEmpty() || merged.get(merged.size() - 1)[1] < interval[0]) {
-        merged.add(interval);
-    } else {
-        merged.get(merged.size() - 1)[1] = Math.max(merged.get(merged.size() - 1)[1], interval[1]);
-    }
-}
+```python
+class Solution:
+    def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+
+        res = []
+        n = len(intervals)
+        for i in range(n):
+
+            #non overlapping case 2 - old interval the newinterval
+            if not newInterval or intervals[i][1] < newInterval[0]:
+                res.append(intervals[i])
+
+            #non overlap case 1 -> new interval the old interval
+            elif newInterval[1] < intervals[i][0]:
+                res.append(newInterval)
+                res.append(intervals[i])
+                newInterval = None
+            
+            else:
+                newInterval[0] = min(newInterval[0], intervals[i][0])
+                newInterval[1] = max(newInterval[1], intervals[i][1])
+        
+        if newInterval:
+            res.append(newInterval)
+        return res
+            
+        
 ```
 
-### Insert Interval
-```java
-List<int[]> result = new ArrayList<>();
-int i = 0;
-// Add all intervals before newInterval
-while (i < intervals.length && intervals[i][1] < newInterval[0]) {
-    result.add(intervals[i++]);
-}
-// Merge overlapping intervals
-while (i < intervals.length && intervals[i][0] <= newInterval[1]) {
-    newInterval[0] = Math.min(newInterval[0], intervals[i][0]);
-    newInterval[1] = Math.max(newInterval[1], intervals[i][1]);
-    i++;
-}
-result.add(newInterval);
-// Add remaining
-while (i < intervals.length) result.add(intervals[i++]);
+### Line Sweep
+```python
+class Solution:
+    def employeeFreeTime(self, schedule: '[[Interval]]') -> '[Interval]':
+        
+        eventMap = defaultdict(int)
+        M, N = len(schedule), len(schedule[0])
+        for i in range(M):
+            for j in range(len(schedule[i])):
+                start = schedule[i][j].start
+                end = schedule[i][j].end
+                eventMap[start] += 1
+                eventMap[end] -= 1
+        
+        start = 0
+        result = []
+        sweepLine  = 0 # monitors event
+        flag = 0
+        for k, v in sorted(eventMap.items()):
+            sweepLine += v
+            # if 0 -> after event means end of some event
+            if sweepLine == 0:
+                start = k
+                flag = 1
+            # new event start after some free time (0---free--somevalue(event start))
+            elif sweepLine > 0 and flag:
+                result.append(Interval(start,k))
+                flag = 0
+        
+        return result    
 ```
 
 ## Key Problems
@@ -48,3 +76,7 @@ while (i < intervals.length) result.add(intervals[i++]);
 | Meeting Rooms | Sort, check no overlap |
 | Meeting Rooms II | Min heap on end times |
 | Non-overlapping Intervals | Greedy, sort by end, count removals |
+
+## My Notes
+
+[Line Sweep Explanation](/assets/interval-line-sweep.png ':ignore')

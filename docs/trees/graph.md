@@ -123,3 +123,5 @@ void union(int x, int y) {
 | Clone Graph | BFS/DFS + HashMap |
 | Network Delay Time | Dijkstra |
 | Accounts Merge | Union-Find |
+Graph - 227
+AVl - 297
