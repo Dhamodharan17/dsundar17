@@ -121,6 +121,30 @@
     body.no-sidebar .sidebar-toggle {
       display: none !important;
     }
+
+    /* DSA progress table — vertical lines only */
+    .markdown-section table {
+      border-collapse: collapse;
+      border: none;
+    }
+    .markdown-section table tr {
+      border: none;
+      background: transparent !important;
+    }
+    .markdown-section table th,
+    .markdown-section table td {
+      border: none;
+      border-right: 2px solid #555;
+      padding: 8px 16px;
+      vertical-align: top;
+    }
+    .markdown-section table th:last-child,
+    .markdown-section table td:last-child {
+      border-right: none;
+    }
+    .markdown-section table thead {
+      display: none;
+    }
   </style>
 </head>
 <body>
