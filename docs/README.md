@@ -38,7 +38,7 @@ Results-driven Full-Stack and Backend Engineer with 7+ years of experience build
 
 <div class="topics-grid">
 <div class="topic-card">
-<a href="#/arrays/sliding-window">
+<a href="#/dsa/README">
 <i class="fas fa-code"></i>
 <h3>DSA</h3>
 <p>Arrays, Trees, DP — pattern-based notes</p>
