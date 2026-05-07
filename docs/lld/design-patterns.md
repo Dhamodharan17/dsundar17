@@ -93,50 +93,37 @@ But in different families/styles.
 
 ---
 
-# Visual Understanding
+# Abstract Factory - Simplified Class Diagram
 
 ```txt
-                Abstract Factory
-                       |
-        --------------------------------
-        |                              |
-  WindowsFactory                 MacFactory
-        |                              |
-   ------------                  ------------
-   |          |                  |          |
-WindowsButton WindowsCheckbox  MacButton MacCheckbox
+                    +-------------------+
+                    |   GUIFactory      |
+                    +-------------------+
+                    | +createButton()   |
+                    | +createCheckbox() |
+                    +-------------------+
+                               ^
+                 -------------------------------
+                 |                             |
+      +-------------------+         +-------------------+
+      | WindowsFactory    |         | MacFactory        |
+      +-------------------+         +-------------------+
+                 |                             |
+         ----------------             ----------------
+         |              |             |              |
+         v              v             v              v
 
-# Abstract Factory - Class Diagram
+   +---------------+  +----------------+  +-----------+  +---------------+
+   | WindowsButton |  | WindowsCheckbox|  | MacButton |  | MacCheckbox   |
+   +---------------+  +----------------+  +-----------+  +---------------+
+           ^                    ^               ^                 ^
+           |                    |               |                 |
+           ----------------------               -------------------
+                      |                                   |
+                +-----------+                      +-------------+
+                |  Button   |                      |  Checkbox   |
+                +-----------+                      +-------------+
 
-```txt
-                        +-------------------+
-                        |   GUIFactory      |
-                        +-------------------+
-                        | +createButton()   |
-                        | +createCheckbox() |
-                        +-------------------+
-                                  ^
-                    -------------------------------
-                    |                             |
-        +-------------------+         +-------------------+
-        |  WindowsFactory   |         |    MacFactory     |
-        +-------------------+         +-------------------+
-        | +createButton()   |         | +createButton()   |
-        | +createCheckbox() |         | +createCheckbox() |
-        +-------------------+         +-------------------+
-                    |                             |
-          -------------------           -------------------
-          |                 |           |                 |
-          v                 v           v                 v
-
-   +---------------+   +----------------+   +-----------+   +---------------+
-   | WindowsButton |   | WindowsCheckbox|   | MacButton |   | MacCheckbox   |
-   +---------------+   +----------------+   +-----------+   +---------------+
-           ^                    ^                  ^                  ^
-           |                    |                  |                  |
-      +---------+         +-----------+      +---------+        +-----------+
-      | Button  |         | Checkbox  |      | Button  |        | Checkbox  |
-      +---------+         +-----------+      +---------+        +-----------+
 
 ## My Notes
 <!-- Add your own observations, mistakes, and learnings below -->
