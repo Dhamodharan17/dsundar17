@@ -10,6 +10,7 @@
   - [Greedy](arrays/greedy.md)
   - [Hashmap](arrays/hashmap.md)
   - [Matrices](arrays/matrices.md)
+  - [Linked List](arrays/linkedlist.md)
 - **Binary Search**
   - [Binary Search](binarysearch/binary-search.md)
 - **Recursion & Backtracking**
