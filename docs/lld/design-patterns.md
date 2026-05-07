@@ -1,4 +1,19 @@
 # LLD - Design Patterns
+## Design pattern
+
+separation of concern - take some code out of business logic
+
+1. Factory Pattern - take object creation outside and chose runtime using parameter
+2. Abstract Factory Pattern - take family of object creation
+3. Builder - takes out complex creation out of business logic (inner class)
+4. Prototype - take cloning out of business logic
+5. Strategy - decoupling algorithms from business logic.
+6. Decorator - it allows you to add behavior to an object dynamically without changing
+7. Adapter - all the conversion logic is encapsulated inside the adapter
+8. Proxy - business logic doesn’t have to handle access control, caching, logging, or lazy loading
+9. Command - all of this is encapsulated in command objects, leaving business logic focused on commands.
+10. Facade - the client/business logic does not have to deal with multiple classes
+
 
 ## When to Use Which Pattern
 
