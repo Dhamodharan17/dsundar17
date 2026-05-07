@@ -21,14 +21,16 @@
   - [Knapsack](dp/knapsack.md)
   - [Subsequence](dp/subsequence.md)
 
-- **Trees & Graphs**
+- **Trees**
   - [BFS & DFS](trees/bfs-dfs.md)
-  - [BST](trees/binary-search-tree.md)
-  - [Graph](trees/graph.md)
+  - [Binary Search Tree](trees/binary-search-tree.md)
   - [Trie](trees/trie.md)
   - [AVL Tree](trees/avl-tree.md)
   - [Segment Tree](trees/segment-tree.md)
   - [Fenwick Tree](trees/fenwick-tree.md)
+
+- **Graph**
+  - [Graph](trees/graph.md)
 
 - **Stack, Heap & Deque**
   - [Stack](stack/stack.md)

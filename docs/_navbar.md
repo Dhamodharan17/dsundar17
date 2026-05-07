@@ -1,10 +1,4 @@
-- [DSA](#/arrays/sliding-window)
-  - [Sliding Window](arrays/sliding-window.md)
-  - [Two Pointer](arrays/two-pointer.md)
-  - [BFS & DFS](trees/bfs-dfs.md)
-  - [BST](trees/binary-search-tree.md)
-  - [Knapsack](dp/knapsack.md)
-  - [Subsequence](dp/subsequence.md)
+- [DSA](dsa/README.md)
 
 - [System Design](#/system-design/scalability-basics)
   - [Scalability Basics](system-design/scalability-basics.md)

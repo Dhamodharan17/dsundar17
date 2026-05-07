@@ -5,6 +5,7 @@
   <title>dsundar - Portfolio & Notes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     :root {
@@ -127,8 +128,9 @@
   <script>
     function toggleSidebar(hook) {
       function update() {
-        var path = window.location.hash.replace('#', '') || '/';
-        if (path === '/' || path === '') {
+        var hash = window.location.hash;
+        var path = hash ? hash.replace(/^#/, '') : '/';
+        if (!path || path === '/' || path === '') {
           document.body.classList.add('no-sidebar');
         } else {
           document.body.classList.remove('no-sidebar');
@@ -142,14 +144,25 @@
       name: 'dsundar',
       repo: '',
       loadSidebar: true,
+      loadNavbar: true,
       subMaxLevel: 2,
       search: 'auto',
       auto2top: true,
+      alias: {
+        '/dsa/_sidebar.md': '/dsa/_sidebar.md',
+        '/arrays/_sidebar.md': '/dsa/_sidebar.md',
+        '/binarysearch/_sidebar.md': '/dsa/_sidebar.md',
+        '/dp/_sidebar.md': '/dsa/_sidebar.md',
+        '/trees/_sidebar.md': '/dsa/_sidebar.md',
+        '/stack/_sidebar.md': '/dsa/_sidebar.md'
+      },
+      sidebarDisplayLevel: 0,
       plugins: [toggleSidebar]
     };
   </script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
 </body>

@@ -1,15 +1,38 @@
 - [Home](/)
+- [DSA](dsa/README.md)
 
-- **DSA**
-  - **Arrays & Strings**
-    - [Sliding Window](arrays/sliding-window.md)
-    - [Two Pointer](arrays/two-pointer.md)
-  - **Trees**
-    - [BFS & DFS](trees/bfs-dfs.md)
-    - [Binary Search Tree](trees/binary-search-tree.md)
-  - **Dynamic Programming**
-    - [Knapsack](dp/knapsack.md)
-    - [Subsequence](dp/subsequence.md)
+- **Arrays & Strings**
+  - [Two Pointer](arrays/two-pointer.md)
+  - [Slow & Fast Pointers](arrays/slow-fast-pointers.md)
+  - [Sliding Window](arrays/sliding-window.md)
+  - [Interval](arrays/interval.md)
+  - [Prefix Sum](arrays/prefix-sum.md)
+  - [Greedy](arrays/greedy.md)
+  - [Hashmap](arrays/hashmap.md)
+  - [Matrices](arrays/matrices.md)
+- **Binary Search**
+  - [Binary Search](binarysearch/binary-search.md)
+- **Recursion & Backtracking**
+  - [Recursion](dp/recursion.md)
+  - [Backtracking](dp/backtracking.md)
+- **Dynamic Programming**
+  - [Knapsack](dp/knapsack.md)
+  - [Subsequence](dp/subsequence.md)
+- **Trees**
+  - [BFS & DFS](trees/bfs-dfs.md)
+  - [Binary Search Tree](trees/binary-search-tree.md)
+  - [Trie](trees/trie.md)
+  - [AVL Tree](trees/avl-tree.md)
+  - [Segment Tree](trees/segment-tree.md)
+  - [Fenwick Tree](trees/fenwick-tree.md)
+- **Graph**
+  - [Graph](trees/graph.md)
+- **Stack, Heap & Deque**
+  - [Stack](stack/stack.md)
+  - [Heap](stack/heap.md)
+  - [Deque](stack/deque.md)
+- **Number Theory**
+  - [Number Theory](dp/number-theory.md)
 
 - **System Design (HLD)**
   - [Scalability Basics](system-design/scalability-basics.md)
