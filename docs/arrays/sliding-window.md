@@ -1,6 +1,9 @@
 # Sliding Window
 
-## When to Use
+## Technique
+- Slide & Undo Effect with some external data structure
+- Right Expands & Left Shrinks
+- External data structure : Stack, Heap, Deque, HashMap, Boolean Array, Total Sum Variable, Sorting
 - Subarray / substring problems with a **condition** (max/min length, sum ≥ k, at most k distinct)
 - Contiguous elements only
 - Clue words: "subarray", "substring", "window", "consecutive"
@@ -8,28 +11,59 @@
 ## Template
 
 ### Fixed Size Window
-```java
-for (int i = 0; i < nums.length; i++) {
-    // add nums[i] to window
-    if (i >= k - 1) {
-        // record answer
-        // remove nums[i - k + 1] from window
-    }
-}
+```python
+class Solution:
+    def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
+        # external data strcture - deque
+        n, res, dq = len(nums), [], deque()
+        l = r = 0
+
+        while r < n:
+            while dq and dq[0] < l:
+                dq.popleft()
+            cur = nums[r]
+            while dq and nums[dq[-1]] < cur:
+                dq.pop()
+            dq.append(r)
+            if r-l+1 == k:
+                res.append(nums[dq[0]])
+                l += 1 #shrink
+            r += 1 #expand
+        return res
+    
+        
 ```
 
 ### Variable Size Window
-```java
-int left = 0;
-for (int right = 0; right < nums.length; right++) {
-    // expand: add nums[right] to window
+```python
+class Solution:
+    def minWindow(self, s: str, t: str) -> str:
+        # external data strcture - hashmap
+        tcount, scount = Counter(t),  Counter()
+        l = r = found = 0
+        mini,sIndexm n = 10**9, -1, len(s)
 
-    while (/* window condition breaks */) {
-        // shrink: remove nums[left] from window
-        left++;
-    }
-    // record answer (max/min window size = right - left + 1)
-}
+        while r < n:
+            scount[s[r]] += 1
+            if s[r] in tcount and tcount[s[r]] == scount[s[r]]:
+                found += 1
+            #since we increase found once it complely satify count
+            while found == len(tcount):
+                winLen = r-l+1
+                if winLen < mini:
+                    mini = winLen
+                    sIndex = l
+                #shrink left
+                lc = s[l]
+                scount[lc] -= 1
+                if lc in tcount and tcount[lc] > scount[lc]:
+                    found -= 1 #only when target reduces
+                l += 1 #shrink
+            r += 1 #expand
+        
+        return s[sIndex:sIndex+mini] if sIndex != -1 else ''
+
+        
 ```
 
 ## Complexity
