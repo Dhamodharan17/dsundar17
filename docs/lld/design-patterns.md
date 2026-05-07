@@ -106,6 +106,37 @@ But in different families/styles.
    |          |                  |          |
 WindowsButton WindowsCheckbox  MacButton MacCheckbox
 
+# Abstract Factory - Class Diagram
+
+```txt
+                        +-------------------+
+                        |   GUIFactory      |
+                        +-------------------+
+                        | +createButton()   |
+                        | +createCheckbox() |
+                        +-------------------+
+                                  ^
+                    -------------------------------
+                    |                             |
+        +-------------------+         +-------------------+
+        |  WindowsFactory   |         |    MacFactory     |
+        +-------------------+         +-------------------+
+        | +createButton()   |         | +createButton()   |
+        | +createCheckbox() |         | +createCheckbox() |
+        +-------------------+         +-------------------+
+                    |                             |
+          -------------------           -------------------
+          |                 |           |                 |
+          v                 v           v                 v
+
+   +---------------+   +----------------+   +-----------+   +---------------+
+   | WindowsButton |   | WindowsCheckbox|   | MacButton |   | MacCheckbox   |
+   +---------------+   +----------------+   +-----------+   +---------------+
+           ^                    ^                  ^                  ^
+           |                    |                  |                  |
+      +---------+         +-----------+      +---------+        +-----------+
+      | Button  |         | Checkbox  |      | Button  |        | Checkbox  |
+      +---------+         +-----------+      +---------+        +-----------+
 
 ## My Notes
 <!-- Add your own observations, mistakes, and learnings below -->
