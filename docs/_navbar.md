@@ -1,4 +1,9 @@
 - [DSA](dsa/README.md)
+  - [Arrays & Strings](arrays/two-pointer.md)
+  - [Backtracking & DP](dp/recursion.md)
+  - [Trees & Graphs](trees/bfs-dfs.md)
+  - [Stack, Heap & Deque](stack/stack.md)
+  - [Number Theory](dp/number-theory.md)
 
 - [System Design](#/system-design/scalability-basics)
   - [Scalability Basics](system-design/scalability-basics.md)
