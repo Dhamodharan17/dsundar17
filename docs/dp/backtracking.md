@@ -1,60 +1,97 @@
 # Backtracking
 
-## When to Use
+## Technique
 - Generate all valid combinations/permutations
-- Constraint satisfaction (Sudoku, N-Queens)
-- Path finding with constraints
+- Constraint satisfaction (Sudoku, N-Queens) - Possible Directions
+- Path finding with constraints - Inject Conditions E.g. No leading zero, palindrome
 - Clue words: "all possible", "generate", "combinations", "permutations"
 
 ## Template
 
-### Subsets
-```java
-void backtrack(int[] nums, int start, List<Integer> current, List<List<Integer>> result) {
-    result.add(new ArrayList<>(current));
-    for (int i = start; i < nums.length; i++) {
-        current.add(nums[i]);
-        backtrack(nums, i + 1, current, result);
-        current.remove(current.size() - 1); // undo
-    }
-}
+### Pick/Skip Pattern
+```python
+#recursion utility
+def util(idx, temp):
+    if idx == N:
+        result.append(list(temp))
+        return
+    #pick
+    temp.append(nums[idx])
+    util(idx+1, temp)
+    #skip
+    temp.pop()
+    util(idx+1, temp)
+
+N, result = len(nums), []
+util(0, [])
+return result
 ```
 
 ### Permutations
-```java
-void backtrack(int[] nums, boolean[] used, List<Integer> current, List<List<Integer>> result) {
-    if (current.size() == nums.length) {
-        result.add(new ArrayList<>(current));
-        return;
-    }
-    for (int i = 0; i < nums.length; i++) {
-        if (used[i]) continue;
-        used[i] = true;
-        current.add(nums[i]);
-        backtrack(nums, used, current, result);
-        current.remove(current.size() - 1);
-        used[i] = false;
-    }
-}
+```python
+def f(used):
+    if len(arr) == len(used):
+        print(used)
+        return
+    # all elements can be chosen at a point based on path
+    for a in arr:
+        # only unused paths are allowed
+        if a not in used:
+            used.append(a)
+            f(used)
+            used.pop()
 ```
 
-### Combination Sum
-```java
-void backtrack(int[] candidates, int target, int start, List<Integer> current, List<List<Integer>> result) {
-    if (target == 0) { result.add(new ArrayList<>(current)); return; }
-    for (int i = start; i < candidates.length; i++) {
-        if (candidates[i] > target) break;
-        current.add(candidates[i]);
-        backtrack(candidates, target - candidates[i], i, current, result); // i not i+1 for reuse
-        current.remove(current.size() - 1);
-    }
-}
+### String Formation
+```python 
+def splitstring(idx, s, result):
+    
+    if idx == len(s):
+        print(result)
+        return
+    
+    for i in range(idx, len(s)):
+    # idx to i
+        result.append(s[idx:i+1])
+        splitstring(i+1, s,result)
+        result.pop()
+
+splitstring(0,'199100199',[])  
+
 ```
 
 ## Key Concepts
 - **Choose → Explore → Unchoose** pattern
 - Pruning: skip invalid states early to reduce search space
 - For duplicates: sort array + `if (i > start && nums[i] == nums[i-1]) continue;`
+
+## Problems
+
+<details>
+<summary>Palindrome Partitioning</summary>
+
+```python
+class Solution:
+    def partition(self, s: str) -> List[List[str]]:
+        def f(i, res):
+            if i == n:
+                ans.append(list(res))
+                return
+            for j in range(i, n):
+                curstr = s[i:j+1]
+                #don't allow it is not palindrome
+                if curstr != curstr[::-1]:
+                    continue
+                res.append(curstr)
+                f(j+1, res)
+                res.pop()
+        n = len(s)
+        ans = []
+        f(0, [])
+        return ans
+```
+</details>
+
 
 ## Key Problems
 | Problem | Approach |
@@ -64,3 +101,4 @@ void backtrack(int[] candidates, int target, int start, List<Integer> current, L
 | N-Queens | Row by row, validate column/diagonal |
 | Sudoku Solver | Cell by cell, try 1-9 |
 | Word Search | DFS on grid with backtracking |
+

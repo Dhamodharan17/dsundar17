@@ -15,16 +15,15 @@
 - **Backtracking & DP**
   - [Recursion](dp/recursion.md)
   - [Backtracking](dp/backtracking.md)
-  - [Knapsack](dp/knapsack.md)
-  - [Subsequence](dp/subsequence.md)
+  - [Dynamic Programming](dp/dynamicprogramming.md)
 - **Trees & Graphs**
-  - [BFS & DFS](trees/bfs-dfs.md)
-  - [Binary Search Tree](trees/binary-search-tree.md)
+  - [Trees](trees/trees.md)
+  - [BST](trees/binary-search-tree.md)
+  - [Graph](trees/graph.md)
   - [Trie](trees/trie.md)
   - [AVL Tree](trees/avl-tree.md)
   - [Segment Tree](trees/segment-tree.md)
   - [Fenwick Tree](trees/fenwick-tree.md)
-  - [Graph](trees/graph.md)
 - **Stack, Heap & Deque**
   - [Stack](stack/stack.md)
   - [Heap](stack/heap.md)

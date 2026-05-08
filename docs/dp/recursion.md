@@ -1,6 +1,6 @@
 # Recursion
 
-## When to Use
+## Technique
 - Problem has a recursive structure (smaller subproblems)
 - Tree/graph traversal
 - Generate all combinations/permutations
@@ -9,34 +9,20 @@
 ## Template
 
 ### Basic Recursion
-```java
-int solve(int n) {
-    if (n <= 1) return n; // base case
-    return solve(n - 1) + solve(n - 2); // recursive case
-}
-```
-
-### Recursion with Memoization
-```java
-Map<Integer, Integer> memo = new HashMap<>();
-int solve(int n) {
-    if (n <= 1) return n;
-    if (memo.containsKey(n)) return memo.get(n);
-    int result = solve(n - 1) + solve(n - 2);
-    memo.put(n, result);
-    return result;
-}
+```python
+def solve(n):
+    if n <= 1: return n  # base case
+    return solve(n - 1) + solve(n - 2)  # recursive case
 ```
 
 ### Divide and Conquer
-```java
-int solve(int[] arr, int lo, int hi) {
-    if (lo == hi) return arr[lo]; // base
-    int mid = lo + (hi - lo) / 2;
-    int left = solve(arr, lo, mid);
-    int right = solve(arr, mid + 1, hi);
-    return merge(left, right);
-}
+```python
+def solve(arr, lo, hi):
+    if lo == hi: return arr[lo]  # base
+    mid = lo + (hi - lo) // 2
+    left = solve(arr, lo, mid)
+    right = solve(arr, mid + 1, hi)
+    return merge(left, right)
 ```
 
 ## Key Concepts

@@ -16,11 +16,10 @@
 - **Backtracking & DP**
   - [Recursion](dp/recursion.md)
   - [Backtracking](dp/backtracking.md)
-  - [Knapsack](dp/knapsack.md)
-  - [Subsequence](dp/subsequence.md)
+  - [Dynamic Programming](dp/dynamicprogramming.md)
 
 - **Trees & Graphs**
-  - [BFS & DFS](trees/bfs-dfs.md)
+  - [Trees](trees/trees.md)
   - [BST](trees/binary-search-tree.md)
   - [Graph](trees/graph.md)
   - [Trie](trees/trie.md)

@@ -49,6 +49,33 @@ TreeNode delete(TreeNode root, int key) {
 }
 ```
 
+### Validate BST
+
+<details>
+<summary>Validate BST (Inorder)</summary>
+
+```python
+class Solution:
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+
+        prev = None
+        def f(root):
+            nonlocal prev
+            if not root:
+                return True
+            if not f(root.left):#got null
+                return False 
+            if prev and prev.val >= root.val:
+                return False
+            prev = root
+            if not f(root.right):  # will get null
+                return False 
+            return True
+        return f(root)
+```
+
+</details>
+
 ## Complexity (Balanced BST)
 - **Search / Insert / Delete:** O(log n)
 - **Worst case (skewed):** O(n)
