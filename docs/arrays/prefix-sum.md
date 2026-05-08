@@ -1,9 +1,9 @@
 # Prefix Sum
 
 ## Technique
-- store subarray in hashmap and total sum in variable
+- <u>**store subarray in hashmap and total sum in variable**</u>
 - Range sum queries, Subarray sum, Difference Array, Prefix Matrix
-- Subarray sum equals K
+- Subarray sum equals K, Congruence 
 - Finding equilibrium index
 - Clue words: "subarray sum", "range sum", "cumulative", "running total"
 

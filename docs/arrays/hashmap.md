@@ -2,8 +2,8 @@
 
 ## Technique
 - Frequency counting & Two Sum type lookups
-- Almost can be used with any data structure
-- Grouping / anagram detection (Anagram - same char and char count, sorting makes all equal)
+- <u>**Almost can be used with any data structure**</u>
+- Grouping / anagram detection (<u>**Anagram - same char and char count, sorting makes all equal**</u>)
 - Clue words: "frequency", "count", "group", "anagram", "two sum"
 
 ## Templates

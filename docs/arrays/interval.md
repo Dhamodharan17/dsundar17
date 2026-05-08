@@ -1,7 +1,7 @@
 # Intervals
 
 ## Technique
-- Sorting , Min Heap, Hashmap(line sweep), 2 Pointer(winner)
+- <u>**Sorting Interval, Hashmap(line sweep), 2 Pointer(winner), Min Heap.**</u>
 - Clue words: "interval", "overlap", "merge", "schedule", "meeting"
 
 ## Template

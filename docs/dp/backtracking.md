@@ -1,9 +1,9 @@
 # Backtracking
 
 ## Technique
-- Generate all valid combinations/permutations
-- Constraint satisfaction (Sudoku, N-Queens) - Possible Directions
-- Path finding with constraints - Inject Conditions E.g. No leading zero, palindrome
+- <u>**Generate all valid combinations/permutations**</u>
+- <u>**Constraint satisfaction (Sudoku, N-Queens) - Possible Directions**</u>
+- Path finding with constraints - <u>**Inject Conditions**</u> E.g. No leading zero, palindrome
 - Clue words: "all possible", "generate", "combinations", "permutations"
 
 ## Template

@@ -2,7 +2,7 @@
 
 ## Technique
 - Locally optimal → globally optimal
-- sorting & heaps often comes & swaps, traversing from right to left, left to right and keeping max/min, suffix array, 2 pointer, mono stack
+- <u>**sorting & heaps often comes & swaps, traversing from right to left, left to right and keeping max/min, suffix array, 2 pointer, mono stack**</u>
 - Greedy = choosing the best option at each step, trusting it leads to the overall best answer.
 - Clue words: "minimum cost", "maximum profit", "schedule", "optimal"
 

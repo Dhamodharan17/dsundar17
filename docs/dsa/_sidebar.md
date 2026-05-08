@@ -11,6 +11,10 @@
   - [Binary Search](arrays/binary-search.md)
   - [Matrices](arrays/matrices.md)
   - [Linked List](arrays/linkedlist.md)
+- **Stack, Heap & Deque**
+  - [Stack](stack/stack.md)
+  - [Heap](stack/heap.md)
+  - [Deque](stack/deque.md)
 
 - **Backtracking & DP**
   - [Recursion](dp/recursion.md)
@@ -25,11 +29,6 @@
   - [AVL Tree](trees/avl-tree.md)
   - [Segment Tree](trees/segment-tree.md)
   - [Fenwick Tree](trees/fenwick-tree.md)
-
-- **Stack, Heap & Deque**
-  - [Stack](stack/stack.md)
-  - [Heap](stack/heap.md)
-  - [Deque](stack/deque.md)
 
 - **Number Theory**
   - [Number Theory](dp/number-theory.md)

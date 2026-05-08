@@ -1,21 +1,21 @@
 # Linked List
 
-## Basic Operations
+<u>**Basic Operations**</u>
 1. Singly Linkedlist
     1. delete, insert
         1. Recursion
             1. directly go to the node in recursion and manipulate
         2. Iterative
-            1. to manipulate kth node, we need k-1th reference, to get k-1th reference we need to iterate k-2 times
-    2. to reach kth node -> iterate k-1 times
+            1. <u>**to manipulate kth node, we need k-1th reference, to get k-1th reference we need to iterate k-2 times**</u>
+    2. <u>**to reach kth node -> iterate k-1 times**</u>
         - stop (1-k-1) for 1 based index
-    3. delete -> skip (head.next = head.next.next)
+    3. <u>**delete -> skip (head.next = head.next.next)**</u>
 2. DLL
     - insert at end - > temp.next = newNode ; newNode.prev = temp
-    - insert in between 4 pointer changes
+    - <u>**insert in between 4 pointer changes**</u>
         - newnode.next = temp.next; newnode.prev = temp
         - temp.next.prev = newnode ; temp.next = newnode
-    - delete in between
+    - <u>**delete in between**</u>
         - target.prev.next = target.next
         - target.next.prev = target.prev
 

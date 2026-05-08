@@ -1,13 +1,13 @@
 # Dynamic Programming
 ## Technique
-- Dynamic Loops ; f(x) -> define the function (solve the smallest problem)
+- <u>**Dynamic Loops ; f(x) -> define the function (solve the smallest problem)**</u>
 - Problems : Knapsack, Unbounded Knapsack, Min/Max among all, Count number of ways, Possible or not
 - Clue words: "subset sum", "partition", "target sum", "profit", "capacity"
 
 ## Approach
 
-- Finding the correct base cases (direct answers) is the real thinking job
-- "What are the smallest subproblems I can solve directly?"
+- <u>**Finding the correct base cases (direct answers) is the real thinking job**</u>
+- <u>**"What are the smallest subproblems I can solve directly?"**</u>
 - Everything else follows.
 - "For which inputs do I already KNOW the answer without recursion?"
 - That depends on problem understanding and pattern recognition.

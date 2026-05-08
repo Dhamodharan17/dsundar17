@@ -1,7 +1,7 @@
 # Recursion
 
 ## Technique
-- Problem has a recursive structure (smaller subproblems)
+- <u>**Problem has a recursive structure (smaller subproblems)**</u>
 - Tree/graph traversal
 - Generate all combinations/permutations
 - Divide and conquer

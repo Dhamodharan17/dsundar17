@@ -9,6 +9,10 @@
   - [Greedy](arrays/greedy.md)
   - [Hashmap](arrays/hashmap.md)
   - [Matrices](arrays/matrices.md)
+- **Stack, Heap & Deque**
+  - [Stack](stack/stack.md)
+  - [Heap](stack/heap.md)
+  - [Deque](stack/deque.md)
 
 - **Binary Search**
   - [Binary Search](arrays/binary-search.md)
@@ -26,11 +30,6 @@
   - [AVL Tree](trees/avl-tree.md)
   - [Segment Tree](trees/segment-tree.md)
   - [Fenwick Tree](trees/fenwick-tree.md)
-
-- **Stack, Heap & Deque**
-  - [Stack](stack/stack.md)
-  - [Heap](stack/heap.md)
-  - [Deque](stack/deque.md)
 
 - **Number Theory**
   - [Number Theory](dp/number-theory.md)

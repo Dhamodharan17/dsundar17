@@ -1,7 +1,7 @@
 # Slow & Fast Pointers
 
 ## Technique
-- In a circular track ,30Kmph and 60Kmph cars will meet definitely at some point
+- In a circular track, <u>**30Kmph and 60Kmph cars will meet definitely at some point**</u>
 - Clue words: "cycle", "circular", "middle node", "happy number"
 - s = f = head (2nd Mid); s,f = head, head.next (1st Mid)
 - 2 Pointer(winner)

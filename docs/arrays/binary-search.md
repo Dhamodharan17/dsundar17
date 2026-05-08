@@ -3,9 +3,9 @@
 ## Technique
 - Sorted array search, Search space reduction
 - rotated array → one side is always sorted 
-- upper bound value must > target and lower bound value must ≥ target
+- <u>**upper bound value must > target and lower bound value must ≥ target**</u>
 - BS on value
-    - when the input data itself contain the answer
+    - <u>**when the input data itself contain the answer**</u>
     - bs on value → find the valid range + apply value on some small logic
     - bs on value → **assume a value to be answer** and try the value to check correctness.
     - find largest minimized → bs on value + lower bound

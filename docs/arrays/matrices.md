@@ -2,8 +2,8 @@
 
 ## Technique
 - 2D grid traversal
-- Matrix rotation / transformation
-- Think in terms of what row/col each cell maps to after transformation E.g 90° clockwise: (r, c) → (c, n-1-r)
+- <u>**Matrix rotation / transformation**</u>
+- <u>**Think in terms of what row/col each cell maps to after transformation E.g 90° clockwise: (r, c) → (c, n-1-r)**</u>
 - Search in sorted matrix
 - Clue words: "grid", "matrix", "rotate", "spiral", "island"
 

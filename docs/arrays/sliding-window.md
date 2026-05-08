@@ -1,8 +1,8 @@
 # Sliding Window
 
 ## Technique
-- Slide & Undo Effect with some external data structure or math propety
-- Right Expands & Left Shrinks
+- <u>**Slide & Undo Effect with some external data structure or math property**</u>
+- <u>**Right Expands & Left Shrinks**</u>
 - External data structure : Stack, Heap, Deque, HashMap, Boolean Array, Total Sum Variable, Sorting
 - Subarray / substring problems with a **condition** (max/min length, sum ≥ k, at most k distinct)
 - Contiguous elements only
