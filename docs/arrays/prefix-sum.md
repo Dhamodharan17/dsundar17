@@ -1,6 +1,7 @@
 # Prefix Sum
 
 ## Technique
+- store subarray in hashmap and total sum in variable
 - Range sum queries, Subarray sum, Difference Array, Prefix Matrix
 - Subarray sum equals K
 - Finding equilibrium index

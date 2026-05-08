@@ -8,29 +8,23 @@
   - [Prefix Sum](arrays/prefix-sum.md)
   - [Greedy](arrays/greedy.md)
   - [Hashmap](arrays/hashmap.md)
+  - [Binary Search](arrays/binary-search.md)
   - [Matrices](arrays/matrices.md)
   - [Linked List](arrays/linkedlist.md)
 
-- **Binary Search**
-  - [Binary Search](binarysearch/binary-search.md)
-
-- **Recursion & Backtracking**
+- **Backtracking & DP**
   - [Recursion](dp/recursion.md)
   - [Backtracking](dp/backtracking.md)
-
-- **Dynamic Programming**
   - [Knapsack](dp/knapsack.md)
   - [Subsequence](dp/subsequence.md)
 
-- **Trees**
+- **Trees & Graphs**
   - [BFS & DFS](trees/bfs-dfs.md)
   - [Binary Search Tree](trees/binary-search-tree.md)
   - [Trie](trees/trie.md)
   - [AVL Tree](trees/avl-tree.md)
   - [Segment Tree](trees/segment-tree.md)
   - [Fenwick Tree](trees/fenwick-tree.md)
-
-- **Graph**
   - [Graph](trees/graph.md)
 
 - **Stack, Heap & Deque**

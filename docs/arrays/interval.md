@@ -68,6 +68,11 @@ class Solution:
         return result    
 ```
 
+### Interval Sorting Problems
+```python
+# sort interval start, end based on problem need ,after thinking
+    intervals.sort(key=lambda x: (x[0], -x[1])) #sort asc, if same sort desc of x[1]
+```
 ## Key Problems
 | Problem | Approach |
 |---------|----------|

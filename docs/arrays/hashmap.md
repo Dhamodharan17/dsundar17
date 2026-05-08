@@ -1,52 +1,59 @@
 # HashMap
 
-## When to Use
-- Frequency counting
-- Two Sum type lookups
-- Grouping / anagram detection
+## Technique
+- Frequency counting & Two Sum type lookups
+- Almost can be used with any data structure
+- Grouping / anagram detection (Anagram - same char and char count, sorting makes all equal)
 - Clue words: "frequency", "count", "group", "anagram", "two sum"
 
 ## Templates
 
 ### Two Sum
-```java
-Map<Integer, Integer> map = new HashMap<>();
-for (int i = 0; i < nums.length; i++) {
-    int complement = target - nums[i];
-    if (map.containsKey(complement)) return new int[]{map.get(complement), i};
-    map.put(nums[i], i);
-}
+```python
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        #x+y = target -> x = target-y
+        xMap = defaultdict(int)
+
+        for i, y in enumerate(nums):
+            x = target - y
+            if x in xMap:
+                return [xMap[x], i]
+            xMap[y] = i
+        return []
+        
 ```
 
 ### Group Anagrams
-```java
-Map<String, List<String>> map = new HashMap<>();
-for (String s : strs) {
-    char[] chars = s.toCharArray();
-    Arrays.sort(chars);
-    String key = new String(chars);
-    map.computeIfAbsent(key, k -> new ArrayList<>()).add(s);
-}
-return new ArrayList<>(map.values());
-```
-
-### Frequency Count
-```java
-Map<Integer, Integer> freq = new HashMap<>();
-for (int num : nums) freq.merge(num, 1, Integer::sum);
+```python
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        anagramMap = defaultdict(list)
+        for s in strs:
+            #sorted(s) return array
+            anagramMap[tuple(sorted(s))].append(s)
+        return [ v for v in anagramMap.values()]
+        
 ```
 
 ### Longest Consecutive Sequence
-```java
-Set<Integer> set = new HashSet<>(Arrays.asList(/* nums boxed */));
-int longest = 0;
-for (int num : set) {
-    if (!set.contains(num - 1)) { // start of sequence
-        int length = 1;
-        while (set.contains(num + length)) length++;
-        longest = Math.max(longest, length);
-    }
-}
+```python
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        numSet = set(nums)
+        maxi = 0
+        for n in numSet:
+            # allow only starts
+            if n-1 in numSet:
+                continue
+            leng = 1
+            # keep searching consective elements
+            while n+leng in numSet:
+                leng += 1
+            # update count of consective elements
+            maxi = max(maxi, leng)
+        return maxi
+        
 ```
 
 ## Key Problems

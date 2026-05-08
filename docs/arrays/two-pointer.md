@@ -1,7 +1,7 @@
 # Two Pointer
 
 ## Technique
-- Start from both ends in sorted array or axis parallel strings/array
+- Start from both ends in sorted array or axis parallel strings/array (pure while loop)
 - Sorted array problems, Palindrome, Reverse, Axis Parallel, 2 Pointer(winner)
 - Hashmap, Math formulas being used to count with certain property like sorteds
 - Clue words: "pair", "sorted", "in-place", "two sum", "three sum"

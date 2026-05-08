@@ -11,13 +11,11 @@
   - [Matrices](arrays/matrices.md)
 
 - **Binary Search**
-  - [Binary Search](binarysearch/binary-search.md)
+  - [Binary Search](arrays/binary-search.md)
 
-- **Recursion & Backtracking**
+- **Backtracking & DP**
   - [Recursion](dp/recursion.md)
   - [Backtracking](dp/backtracking.md)
-
-- **Dynamic Programming**
   - [Knapsack](dp/knapsack.md)
   - [Subsequence](dp/subsequence.md)
 
