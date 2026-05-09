@@ -4,13 +4,13 @@
 
 | | | | |
 |---|---|---|---|
-| ✅ [Two Pointer](arrays/two-pointer.md) | ✅ [Recursion](dp/recursion.md) | ✅ [Stack](stack/stack.md) | [Trie](trees/trie.md) |
-| ✅ [Slow & Fast Pointers](arrays/slow-fast-pointers.md) | ✅ [Backtracking](dp/backtracking.md) | ✅ [Heap](stack/heap.md) | [AVL Tree](trees/avl-tree.md) |
-| ✅ [Sliding Window](arrays/sliding-window.md) | ✅ [DP](dp/knapsack.md) | ✅ [Deque](stack/deque.md) | [Segment Tree](trees/segment-tree.md) |
-| ✅ [Interval](arrays/interval.md) | ✅ [Tree](trees/trees.md) | ✅ [Hashmap](arrays/hashmap.md) | [Fenwick Tree](trees/fenwick-tree.md) |
-| ✅ [Prefix Sum](arrays/prefix-sum.md) | ✅ [Graph](trees/graph.md) | ✅ [Matrices](arrays/matrices.md) | [Number Theory](dp/number-theory.md) |
-| ✅ [Binary Search](arrays/binary-search.md) | ✅ [Linked List](arrays/linkedlist.md) | | |
-| ✅ [Greedy](arrays/greedy.md) | | | |
+| ✅ [Two Pointer](dsa/arrays/two-pointer.md) | ✅ [Recursion](dsa/dp/recursion.md) | ✅ [Stack](dsa/stack/stack.md) | [Trie](dsa/trees/trie.md) |
+| ✅ [Slow & Fast Pointers](dsa/arrays/slow-fast-pointers.md) | ✅ [Backtracking](dsa/dp/backtracking.md) | ✅ [Heap](dsa/stack/heap.md) | [AVL Tree](dsa/trees/avl-tree.md) |
+| ✅ [Sliding Window](dsa/arrays/sliding-window.md) | ✅ [DP](dsa/dp/knapsack.md) | ✅ [Deque](dsa/stack/deque.md) | [Segment Tree](dsa/trees/segment-tree.md) |
+| ✅ [Interval](dsa/arrays/interval.md) | ✅ [Tree](dsa/trees/trees.md) | ✅ [Hashmap](dsa/arrays/hashmap.md) | [Fenwick Tree](dsa/trees/fenwick-tree.md) |
+| ✅ [Prefix Sum](dsa/arrays/prefix-sum.md) | ✅ [Graph](dsa/trees/graph.md) | ✅ [Matrices](dsa/arrays/matrices.md) | [Number Theory](dsa/dp/number-theory.md) |
+| ✅ [Binary Search](dsa/arrays/binary-search.md) | ✅ [Linked List](dsa/arrays/linkedlist.md) | | |
+| ✅ [Greedy](dsa/arrays/greedy.md) | | | |
 
 ---
 
