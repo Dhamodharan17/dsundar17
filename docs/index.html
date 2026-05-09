@@ -145,10 +145,183 @@
     .markdown-section table thead {
       display: none;
     }
+
+    /* Floating scratchpad */
+    .scratchpad-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #0366d6;
+      color: #fff;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .scratchpad-btn:hover { background: #024ea4; }
+    .scratchpad {
+      position: fixed;
+      bottom: 75px;
+      right: 20px;
+      width: 320px;
+      height: 250px;
+      min-width: 200px;
+      min-height: 150px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      z-index: 9998;
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .scratchpad.open { display: flex; }
+    /* Resize edges */
+    .sp-edge {
+      position: absolute;
+      z-index: 10;
+    }
+    .sp-edge-n { top: -4px; left: 8px; right: 8px; height: 8px; cursor: n-resize; }
+    .sp-edge-s { bottom: -4px; left: 8px; right: 8px; height: 8px; cursor: s-resize; }
+    .sp-edge-e { right: -4px; top: 8px; bottom: 8px; width: 8px; cursor: e-resize; }
+    .sp-edge-w { left: -4px; top: 8px; bottom: 8px; width: 8px; cursor: w-resize; }
+    .sp-edge-nw { top: -4px; left: -4px; width: 12px; height: 12px; cursor: nw-resize; }
+    .sp-edge-ne { top: -4px; right: -4px; width: 12px; height: 12px; cursor: ne-resize; }
+    .sp-edge-sw { bottom: -4px; left: -4px; width: 12px; height: 12px; cursor: sw-resize; }
+    .sp-edge-se { bottom: -4px; right: -4px; width: 12px; height: 12px; cursor: se-resize; }
+    .scratchpad-header {
+      padding: 8px 12px;
+      background: #f6f8fa;
+      border-bottom: 1px solid #eee;
+      font-weight: 600;
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: move;
+    }
+    .scratchpad-header button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      color: #666;
+    }
+    .scratchpad-header button:hover { color: #024ea4; }
+    .scratchpad-header .btn-group { display: flex; gap: 6px; }
+    .scratchpad textarea {
+      flex: 1;
+      border: none;
+      padding: 10px 12px;
+      font-family: monospace;
+      font-size: 13px;
+      resize: none;
+      outline: none;
+    }
   </style>
 </head>
 <body>
   <div id="app"></div>
+
+  <!-- Floating Scratchpad -->
+  <button class="scratchpad-btn" onclick="toggleScratchpad()" title="Scratchpad">&#9998;</button>
+  <div class="scratchpad" id="scratchpad">
+    <div class="sp-edge sp-edge-n" data-dir="n"></div>
+    <div class="sp-edge sp-edge-s" data-dir="s"></div>
+    <div class="sp-edge sp-edge-e" data-dir="e"></div>
+    <div class="sp-edge sp-edge-w" data-dir="w"></div>
+    <div class="sp-edge sp-edge-nw" data-dir="nw"></div>
+    <div class="sp-edge sp-edge-ne" data-dir="ne"></div>
+    <div class="sp-edge sp-edge-sw" data-dir="sw"></div>
+    <div class="sp-edge sp-edge-se" data-dir="se"></div>
+    <div class="scratchpad-header">
+      <span>Scratchpad</span>
+      <div class="btn-group">
+        <button onclick="copyScratchpad()" title="Copy to clipboard">&#128203;</button>
+        <button onclick="downloadScratchpad()" title="Download as .md">&#11015;</button>
+        <button onclick="clearScratchpad()" title="Clear">&#128465;</button>
+      </div>
+    </div>
+    <textarea id="scratchpad-text" placeholder="Type temporary notes here..."></textarea>
+  </div>
+  <script>
+    function toggleScratchpad() {
+      document.getElementById('scratchpad').classList.toggle('open');
+      document.getElementById('scratchpad-text').focus();
+    }
+    function clearScratchpad() {
+      document.getElementById('scratchpad-text').value = '';
+      localStorage.removeItem('scratchpad');
+    }
+    function copyScratchpad() {
+      var text = document.getElementById('scratchpad-text').value;
+      navigator.clipboard.writeText(text).then(function() {
+        alert('Copied to clipboard!');
+      });
+    }
+    function downloadScratchpad() {
+      var text = document.getElementById('scratchpad-text').value;
+      var blob = new Blob([text], { type: 'text/markdown' });
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'scratchpad-notes.md';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+    // Persist notes in localStorage
+    (function() {
+      var ta = document.getElementById('scratchpad-text');
+      ta.value = localStorage.getItem('scratchpad') || '';
+      ta.addEventListener('input', function() {
+        localStorage.setItem('scratchpad', ta.value);
+      });
+    })();
+
+    // Resize from all edges
+    (function() {
+      var sp = document.getElementById('scratchpad');
+      var edges = sp.querySelectorAll('.sp-edge');
+      var minW = 200, minH = 150;
+      edges.forEach(function(edge) {
+        edge.addEventListener('mousedown', function(e) {
+          e.preventDefault();
+          var dir = edge.dataset.dir;
+          var rect = sp.getBoundingClientRect();
+          var startX = e.clientX, startY = e.clientY;
+          var startW = rect.width, startH = rect.height;
+          var startL = rect.left, startT = rect.top;
+          function onMove(e) {
+            var dx = e.clientX - startX, dy = e.clientY - startY;
+            var newW = startW, newH = startH, newL = startL, newT = startT;
+            if (dir.includes('e')) newW = Math.max(minW, startW + dx);
+            if (dir.includes('w')) { newW = Math.max(minW, startW - dx); newL = startL + (startW - newW); }
+            if (dir.includes('s')) newH = Math.max(minH, startH + dy);
+            if (dir.includes('n')) { newH = Math.max(minH, startH - dy); newT = startT + (startH - newH); }
+            sp.style.width = newW + 'px';
+            sp.style.height = newH + 'px';
+            sp.style.left = newL + 'px';
+            sp.style.top = newT + 'px';
+            sp.style.right = 'auto';
+            sp.style.bottom = 'auto';
+          }
+          function onUp() {
+            document.removeEventListener('mousemove', onMove);
+            document.removeEventListener('mouseup', onUp);
+          }
+          document.addEventListener('mousemove', onMove);
+          document.addEventListener('mouseup', onUp);
+        });
+      });
+    })();
+  </script>
   <script>
     function toggleSidebar(hook) {
       function update() {
@@ -178,6 +351,11 @@
         '/dsa/dp/_sidebar.md': '/dsa/_sidebar.md',
         '/dsa/trees/_sidebar.md': '/dsa/_sidebar.md',
         '/dsa/stack/_sidebar.md': '/dsa/_sidebar.md',
+        '/dev/_sidebar.md': '/dev/_sidebar.md',
+        '/dev/java/_sidebar.md': '/dev/_sidebar.md',
+        '/dev/spring/_sidebar.md': '/dev/_sidebar.md',
+        '/dev/javascript/_sidebar.md': '/dev/_sidebar.md',
+        '/dev/react/_sidebar.md': '/dev/_sidebar.md',
         '/ml/_sidebar.md': '/ml/_sidebar.md'
       },
       sidebarDisplayLevel: 0,

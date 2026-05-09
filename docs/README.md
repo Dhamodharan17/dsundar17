@@ -59,10 +59,10 @@ Results-driven Full-Stack and Backend Engineer with 7+ years of experience build
 </a>
 </div>
 <div class="topic-card">
-<a href="#/java/core-concepts">
+<a href="#/dev/java/core-concepts">
 <i class="fab fa-java"></i>
-<h3>Java</h3>
-<p>Collections, Streams, Concurrency, OOP</p>
+<h3>Development</h3>
+<p>Java, Spring Boot, JavaScript, React</p>
 </a>
 </div>
 </div>

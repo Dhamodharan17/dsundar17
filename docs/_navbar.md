@@ -13,7 +13,8 @@
   - [Design Patterns](lld/design-patterns.md)
   - [Common Problems](lld/common-problems.md)
 
-- [Java](#/java/core-concepts)
-  - [Core Concepts](java/core-concepts.md)
-  - [Concurrency](java/concurrency.md)
-  - [OOP & Misc](java/oop-and-misc.md)
+- [Development](#/dev/java/core-concepts)
+  - [Java](dev/java/core-concepts.md)
+  - [Spring Boot](dev/spring/)
+  - [JavaScript](dev/javascript/)
+  - [React](dev/react/)

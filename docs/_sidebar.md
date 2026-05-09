@@ -39,7 +39,7 @@
   - [Design Patterns & SOLID](lld/design-patterns.md)
   - [Common Problems](lld/common-problems.md)
 
-- **Java**
-  - [Core Concepts](java/core-concepts.md)
-  - [Concurrency](java/concurrency.md)
-  - [OOP & Misc](java/oop-and-misc.md)
+- **Development**
+  - [Java - Core Concepts](dev/java/core-concepts.md)
+  - [Java - Concurrency](dev/java/concurrency.md)
+  - [Java - OOP & Misc](dev/java/oop-and-misc.md)
