@@ -207,3 +207,10 @@ class Solution:
 | Koko Eating Bananas | Binary search on answer |
 | Median of Two Sorted Arrays | Binary search on partition |
 | Search a 2D Matrix | Treat as 1D sorted array |
+
+## My Notes
+- 475. Heaters
+ bisect_left returns the lower bound (first index where heaters[i] >= v).
+
+heaters[i] = first element ≥ v → lower bound (nearest right)
+heaters[i-1] = last element < v → nearest left
