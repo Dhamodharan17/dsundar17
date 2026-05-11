@@ -4,9 +4,10 @@
   - [Core Concepts](dev/java/core-concepts.md)
   - [Concurrency](dev/java/concurrency.md)
   - [OOP & Misc](dev/java/oop-and-misc.md)
-- [Spring Boot](dev/spring/)
-  - *Coming soon*
+- **Spring Boot**
+  - [Servlet](dev/spring/servlet.md)
+  - [Spring Boot Concepts](dev/spring/spring-boot-concepts.md)
 - [JavaScript](dev/javascript/)
-  - *Coming soon*
+  - [Core Concepts](dev/javascript/README.md)
 - [React](dev/react/)
   - *Coming soon*

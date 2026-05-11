@@ -84,4 +84,5 @@ Collectors.toMap(Student::getId, Student::getName)
 ```
 
 ## My Notes
-<!-- Add your own observations, mistakes, and learnings below -->
+<!-- Add your own observations, mistakes, and learnings below -->https://www.notion.so/Backend-Interview-298ab1fe3aaa80c88444c308a8977987?p=2a1ab1fe3aaa801a92c6db8421445972&pm=s
+https://www.notion.so/Tech-Lead-298ab1fe3aaa80a187dee66080572f78
