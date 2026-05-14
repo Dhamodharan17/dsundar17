@@ -1,9 +1,4 @@
 
-
-Here is the full README content. Create `readmes/composite-pattern.md` and paste this:
-
----
-
 ```markdown
 # Composite Pattern
 
@@ -289,8 +284,4 @@ BufferedInputStream
 | Interview one-liner | Composite pattern lets clients treat individual objects and compositions uniformly through a shared interface, eliminating type-checking in tree structures. |
 ```
 
----
 
-This follows the same structure as your Bridge pattern notes. To create the file, switch to a mode that allows editing, or manually create `readmes/composite-pattern.md` and paste the content above.---
-
-This follows the same structure as your Bridge pattern notes. To create the file, switch to a mode that allows editing, or manually create `readmes/composite-pattern.md` and paste the content above.
