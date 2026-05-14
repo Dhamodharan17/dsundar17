@@ -1,5 +1,4 @@
 
-```markdown
 # Composite Pattern
 
 ## CAUSE and EFFECT
@@ -282,6 +281,5 @@ BufferedInputStream
 | How is it different from Decorator? | Composite = one-to-many (tree). Decorator = one-to-one (chain). |
 | Java example | Component and Container in AWT/Swing |
 | Interview one-liner | Composite pattern lets clients treat individual objects and compositions uniformly through a shared interface, eliminating type-checking in tree structures. |
-```
 
 
